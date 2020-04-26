@@ -1,0 +1,6 @@
+Training error: 0.052
+Training relative attack error: 0.207
+Training relative normal error: 0.026
+Validation error: 0.059
+Validation relative attack error: 0.241
+Validation relative normal error: 0.028
