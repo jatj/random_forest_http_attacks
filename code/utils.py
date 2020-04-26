@@ -1,10 +1,11 @@
 import os.path
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 from scipy import stats
 
 
-def plotClassifier(model, X, y):
+def plot_classifier(model, X, y):
     """plots the decision boundary of the model and the scatterpoints
        of the target values 'y'.
 
@@ -96,4 +97,16 @@ def euclidean_dist_squared(X, Xtest):
     # t,d = Xtest.shape
     # D = X**2@np.ones((d,t)) + np.ones((n,d))@(Xtest.T)**2 - 2*X@Xtest.T
 
+def load_csv(filename):
+    '''
+    Loads a csv file relative to the data folder in this repo
+    '''
+    return pd.read_csv(os.path.join('..','data',filename)) 
 
+def export_model(path, model):
+    '''
+    Exports a model into the provided path
+    '''
+    file = open(path, 'w')
+    file.write(model.export())
+    file.close()
